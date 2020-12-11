@@ -12,6 +12,6 @@ cd ../spring-pact-producerr
 
 ## Links
 
-* [pact.io](https://docs.pact.io/)]
+* [pact.io](https://docs.pact.io/)
 * [https://spring.io/projects/spring-cloud-contract](https://spring.io/projects/spring-cloud-contract)
 * [https://bitbucket.org/atlassian/swagger-request-validator/src/master/](https://bitbucket.org/atlassian/swagger-request-validator/src/master/)
