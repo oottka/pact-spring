@@ -9,9 +9,7 @@ public class ReindeerClient {
     private String baseUrl;
 
     public Reindeer fetchRudolph() {
-        Reindeer rudolph = new Reindeer(1, "Rudolph", "the Red Nosed Reindeer");
-
-        return fetchReindeer(rudolph.getId());
+        return fetchReindeer(1L);
     }
 
     public Reindeer fetchReindeer(Long id) {

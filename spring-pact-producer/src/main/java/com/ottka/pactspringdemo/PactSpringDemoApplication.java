@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 @SpringBootApplication
 @RestController
 public class PactSpringDemoApplication {

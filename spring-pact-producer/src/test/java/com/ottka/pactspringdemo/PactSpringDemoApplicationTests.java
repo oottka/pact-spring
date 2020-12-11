@@ -53,5 +53,7 @@ class PactSpringDemoApplicationTests {
 
 	@State("when Rudolph has id 1")
 	public void fetchReindeer() {
+		// The test sends the request defined in the pact to the server,
+		// and asserts that the server's response matches the expected response
 	}
 }

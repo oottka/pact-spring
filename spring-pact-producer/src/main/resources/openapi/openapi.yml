@@ -2,8 +2,6 @@ openapi: 3.0.1
 info:
   title: Reindeer API
   version: 0.0.1
-
-
 tags:
   - name: reindeers
     description: Reindeer api
