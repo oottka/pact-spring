@@ -1,0 +1,46 @@
+{
+  "provider": {
+    "name": "reindeerProvider"
+  },
+  "consumer": {
+    "name": "reindeerConsumer"
+  },
+  "interactions": [
+    {
+      "description": "GET with id",
+      "request": {
+        "method": "GET",
+        "path": "/reindeers",
+        "query": {
+          "id": [
+            "1"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 1,
+          "name": "Rudolph",
+          "title": "the Red Nosed Reindeer"
+        }
+      },
+      "providerStates": [
+        {
+          "name": "GET Rudolph"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.10"
+    }
+  }
+}

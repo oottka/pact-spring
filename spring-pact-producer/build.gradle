@@ -1,0 +1,52 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id "au.com.dius.pact" version "4.1.7"
+	id "com.wiredforcode.spawn" version "0.8.2"
+}
+
+group = 'com.ottka'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'au.com.dius.pact.provider:junit5:4.1.0'
+	testImplementation 'au.com.dius.pact.provider:junit5spring:4.1.0'
+	testImplementation 'com.atlassian.oai:swagger-request-validator-pact:2.11.1'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+pact {
+
+	serviceProviders {
+
+		// You can define as many as you need, but each must have a unique name
+		wishlistProvider {
+			// All the provider properties are optional, and have sensible defaults (shown below)
+			protocol = 'http'
+			host = 'localhost'
+			port = 8080
+			path = '/'
+
+			// Again, you can define as many consumers for each provider as you need, but each must have a unique name
+			hasPactWith('wishlistConsumer') {
+
+				// currently supports a file path using file() or a URL using url()
+				pactSource = file("$buildDir/pacts/test_consumer-test_provider.json")
+
+			}
+		}
+
+	}
+
+}
