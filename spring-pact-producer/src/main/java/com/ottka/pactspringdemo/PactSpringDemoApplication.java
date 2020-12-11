@@ -19,13 +19,14 @@ public class PactSpringDemoApplication {
 	private static final Logger log = LoggerFactory.getLogger(PactSpringDemoApplication.class);
 
 	public PactSpringDemoApplication() {
-		reindeers.put(1l, new Reindeer(1l, "Rudolph", "the Red Nosed Reindeer"));
+		reindeers.put(1L, new Reindeer(1L, "Rudolph", "the Red Nosed Reindeer"));
 	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(PactSpringDemoApplication.class, args);
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/reindeers")
 	public Reindeer getReindeer(@RequestParam(value = "id") Long id) {
 		log.info("Getting reindeer with id: " + id);

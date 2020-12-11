@@ -19,7 +19,6 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE,
-		properties = "user-service.base-url:http://localhost:8080",
 		classes = SpringPactConsumerApplication.class)
 @ExtendWith(PactConsumerTestExt.class)
 @PactTestFor(providerName = "reindeerProvider")
