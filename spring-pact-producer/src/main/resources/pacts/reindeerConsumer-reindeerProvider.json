@@ -30,7 +30,7 @@
       },
       "providerStates": [
         {
-          "name": "GET Rudolph"
+          "name": "when Rudolph has id 1"
         }
       ]
     }

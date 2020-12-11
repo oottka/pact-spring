@@ -51,7 +51,7 @@ class PactSpringDemoApplicationTests {
 		context.setTarget(new HttpTestTarget("localhost", 8080, "/"));
 	}
 
-	@State("GET Rudolph")
+	@State("when Rudolph has id 1")
 	public void fetchReindeer() {
 	}
 }

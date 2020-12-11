@@ -28,11 +28,11 @@ class SpringPactConsumerApplicationTests {
 	ReindeerClient reindeerClient;
 
 	@Pact(provider = "reindeerProvider", consumer = "reindeerConsumer")
-	public RequestResponsePact pactfetchReindeer(PactDslWithProvider builder) {
+	public RequestResponsePact pactFetchReindeer(PactDslWithProvider builder) {
 		Map<String, String> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		return builder
-				.given("GET Rudolph")
+				.given("when Rudolph has id 1")
 					.uponReceiving("GET with id")
 					.path("/reindeers")
 					.method("GET")
@@ -45,7 +45,7 @@ class SpringPactConsumerApplicationTests {
 	}
 
 	@Test
-	@PactTestFor(pactMethod = "pactfetchReindeer")
+	@PactTestFor(pactMethod = "pactFetchReindeer")
 	public void givenGet_whenSendRequest_shouldReturn200WithProperHeaderAndBody(MockServer mockServer) {
 		reindeerClient.setBaseUrl(mockServer.getUrl());
 
